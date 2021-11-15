@@ -46,21 +46,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Allergy_Hist.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Allergy_Hist.Designer.cs">
+      <DependentUpon>Allergy_Hist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main_Page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_Page.Designer.cs">
+      <DependentUpon>Main_Page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gen_Hist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gen_Hist.Designer.cs">
+      <DependentUpon>Gen_Hist.cs</DependentUpon>
     </Compile>
     <Compile Include="MedsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MedsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Med_Hist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Med_Hist.Designer.cs">
+      <DependentUpon>Med_Hist.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Gen_Hist.resx">
+      <DependentUpon>Gen_Hist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_Page.resx">
+      <DependentUpon>Main_Page.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
