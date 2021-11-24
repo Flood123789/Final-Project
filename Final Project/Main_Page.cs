@@ -24,9 +24,14 @@ namespace Final_Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'medsDataSet.GenMed' table. You can move, or remove it, as needed.
+            this.genMedTableAdapter.Fill(this.medsDataSet.GenMed);
             // TODO: This line of code loads data into the 'medsDataSet.Selection' table. You can move, or remove it, as needed.
             this.selectionTableAdapter.Fill(this.medsDataSet.Selection);
+            //  this.Gen_Hist_Tb.Enabled = false;
             //Patient_Selection.Items.AddRange(MedsDataSet.SelectionDataTable)
+            //dataGridView1.Visible = false;
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -61,6 +66,19 @@ namespace Final_Project
         {
             //Will reload the table from the database, erasing unsaved edits.
             this.selectionTableAdapter.Fill(this.medsDataSet.Selection);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                //Will save to DataBase 
+                this.genMedTableAdapter.Update(this.medsDataSet.GenMed);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(Convert.ToString(error.Message));
+            }
         }
     }
 }
