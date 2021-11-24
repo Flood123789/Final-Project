@@ -50,7 +50,7 @@ namespace Final_Project
             this.selectionTableAdapter = new Final_Project.MedsDataSetTableAdapters.SelectionTableAdapter();
             this.genMedTableAdapter = new Final_Project.MedsDataSetTableAdapters.GenMedTableAdapter();
             this.Patient_IdLbl = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.Gen_Hist_txt_Bx = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Select_box)).BeginInit();
@@ -68,7 +68,7 @@ namespace Final_Project
             this.tabControl1.Location = new System.Drawing.Point(6, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(711, 434);
+            this.tabControl1.Size = new System.Drawing.Size(782, 434);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
@@ -158,21 +158,21 @@ namespace Final_Project
             // 
             // Gen_Hist_Tb
             // 
-            this.Gen_Hist_Tb.Controls.Add(this.richTextBox1);
+            this.Gen_Hist_Tb.Controls.Add(this.Gen_Hist_txt_Bx);
             this.Gen_Hist_Tb.Controls.Add(this.Patient_IdLbl);
             this.Gen_Hist_Tb.Controls.Add(this.Save_Gen);
             this.Gen_Hist_Tb.Controls.Add(this.GenMedDataView);
             this.Gen_Hist_Tb.Location = new System.Drawing.Point(4, 22);
             this.Gen_Hist_Tb.Name = "Gen_Hist_Tb";
             this.Gen_Hist_Tb.Padding = new System.Windows.Forms.Padding(3);
-            this.Gen_Hist_Tb.Size = new System.Drawing.Size(703, 408);
+            this.Gen_Hist_Tb.Size = new System.Drawing.Size(774, 408);
             this.Gen_Hist_Tb.TabIndex = 1;
             this.Gen_Hist_Tb.Text = "General Medical History";
             this.Gen_Hist_Tb.UseVisualStyleBackColor = true;
             // 
             // Save_Gen
             // 
-            this.Save_Gen.Location = new System.Drawing.Point(444, 293);
+            this.Save_Gen.Location = new System.Drawing.Point(16, 362);
             this.Save_Gen.Name = "Save_Gen";
             this.Save_Gen.Size = new System.Drawing.Size(75, 23);
             this.Save_Gen.TabIndex = 7;
@@ -188,7 +188,7 @@ namespace Final_Project
             this.patientIDDataGridViewTextBoxColumn1,
             this.generalMedDataGridViewTextBoxColumn});
             this.GenMedDataView.DataSource = this.genMedBindingSource;
-            this.GenMedDataView.Location = new System.Drawing.Point(25, 33);
+            this.GenMedDataView.Location = new System.Drawing.Point(509, 15);
             this.GenMedDataView.Name = "GenMedDataView";
             this.GenMedDataView.Size = new System.Drawing.Size(247, 150);
             this.GenMedDataView.TabIndex = 0;
@@ -221,19 +221,19 @@ namespace Final_Project
             // Patient_IdLbl
             // 
             this.Patient_IdLbl.AutoSize = true;
-            this.Patient_IdLbl.Location = new System.Drawing.Point(25, 202);
+            this.Patient_IdLbl.Location = new System.Drawing.Point(13, 27);
             this.Patient_IdLbl.Name = "Patient_IdLbl";
             this.Patient_IdLbl.Size = new System.Drawing.Size(25, 13);
             this.Patient_IdLbl.TabIndex = 8;
             this.Patient_IdLbl.Text = "Null";
             // 
-            // richTextBox1
+            // Gen_Hist_txt_Bx
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(25, 220);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(388, 96);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "";
+            this.Gen_Hist_txt_Bx.Location = new System.Drawing.Point(6, 69);
+            this.Gen_Hist_txt_Bx.Name = "Gen_Hist_txt_Bx";
+            this.Gen_Hist_txt_Bx.Size = new System.Drawing.Size(497, 275);
+            this.Gen_Hist_txt_Bx.TabIndex = 9;
+            this.Gen_Hist_txt_Bx.Text = "";
             // 
             // Main_Page
             // 
@@ -278,7 +278,7 @@ namespace Final_Project
         private System.Windows.Forms.Button Save_Gen;
         private System.Windows.Forms.DataGridViewTextBoxColumn patientIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn generalMedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox Gen_Hist_txt_Bx;
         private System.Windows.Forms.Label Patient_IdLbl;
     }
 }

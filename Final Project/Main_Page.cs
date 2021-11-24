@@ -29,9 +29,12 @@ namespace Final_Project
             // TODO: This line of code loads data into the 'medsDataSet.Selection' table. You can move, or remove it, as needed.
             this.selectionTableAdapter.Fill(this.medsDataSet.Selection);
             this.GenMedDataView.ClearSelection();
-            //  this.Gen_Hist_Tb.Enabled = false;
+            var tab = Gen_Hist_Tb;
+            //this.tabControl1.TabPages.Remove(Gen_Hist_Tb);
+
+            Gen_Hist_Tb.Visible = false;
             //Patient_Selection.Items.AddRange(MedsDataSet.SelectionDataTable)
-            //dataGridView1.Visible = false;
+            GenMedDataView.Visible = false;
 
         }
 
@@ -93,6 +96,7 @@ namespace Final_Project
 
             try
             {
+                //Deselects prievious stuff
                 GenMedDataView.ClearSelection();
                 foreach (DataGridViewRow row in GenMedDataView.Rows)
                 {
@@ -104,15 +108,28 @@ namespace Final_Project
                         //GenMedDataView.CurrentCell = GenMedDataView[RowIndex, 1];
                         break;
                     }
+
                 }
+                //Sets Gen hist tab
+                if(tabControl1.TabPages.Contains(Gen_Hist_Tb) == true)
+                {
+                    tabControl1.SelectedTab = Gen_Hist_Tb;
+                }
+                else
+                {
+                    this.tabControl1.TabPages.Add(Gen_Hist_Tb);  //re-adds tab
+                    tabControl1.SelectedTab = Gen_Hist_Tb;
+                }
+
+                //Updates tab
                 Patient_IdLbl.Text = "Patient: " + patient;
+                Gen_Hist_txt_Bx.Text = Convert.ToString(GenMedDataView.Rows[RowIndex].Cells[1].Value);
+                Gen_Hist_Tb.Visible = true;
             }
             catch(Exception error)
             {
                 MessageBox.Show(Convert.ToString(error.Message));
             }
-            
-            
         }
 
         private void Save_Button_F1_Click(object sender, EventArgs e)
