@@ -37,6 +37,7 @@ namespace Final_Project
         private void button1_Click(object sender, EventArgs e)
         {
             this.medsDataSet.Selection.update(this.Select_box);
+            Console.WriteLine("Hello Wolrd");
         }
     }
 }
