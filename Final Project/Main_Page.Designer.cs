@@ -30,7 +30,7 @@ namespace Final_Project
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.New_PatientTb = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Undo_btn_F1 = new System.Windows.Forms.Button();
             this.Select_Pt = new System.Windows.Forms.Button();
@@ -42,6 +42,8 @@ namespace Final_Project
             this.selectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.medsDataSet = new Final_Project.MedsDataSet();
             this.Gen_Hist_Tb = new System.Windows.Forms.TabPage();
+            this.Gen_Hist_txt_Bx = new System.Windows.Forms.RichTextBox();
+            this.Patient_IdLbl = new System.Windows.Forms.Label();
             this.Save_Gen = new System.Windows.Forms.Button();
             this.GenMedDataView = new System.Windows.Forms.DataGridView();
             this.patientIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,9 +51,12 @@ namespace Final_Project
             this.genMedBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.selectionTableAdapter = new Final_Project.MedsDataSetTableAdapters.SelectionTableAdapter();
             this.genMedTableAdapter = new Final_Project.MedsDataSetTableAdapters.GenMedTableAdapter();
-            this.Patient_IdLbl = new System.Windows.Forms.Label();
-            this.Gen_Hist_txt_Bx = new System.Windows.Forms.RichTextBox();
-            this.tabControl1.SuspendLayout();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.New_PatientTb.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Select_box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectionBindingSource)).BeginInit();
@@ -59,17 +64,19 @@ namespace Final_Project
             this.Gen_Hist_Tb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GenMedDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.genMedBindingSource)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // New_PatientTb
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.Gen_Hist_Tb);
-            this.tabControl1.Location = new System.Drawing.Point(6, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(782, 434);
-            this.tabControl1.TabIndex = 5;
+            this.New_PatientTb.Controls.Add(this.tabPage1);
+            this.New_PatientTb.Controls.Add(this.Gen_Hist_Tb);
+            this.New_PatientTb.Controls.Add(this.tabPage2);
+            this.New_PatientTb.Location = new System.Drawing.Point(6, 34);
+            this.New_PatientTb.Name = "New_PatientTb";
+            this.New_PatientTb.SelectedIndex = 0;
+            this.New_PatientTb.Size = new System.Drawing.Size(782, 434);
+            this.New_PatientTb.TabIndex = 5;
             // 
             // tabPage1
             // 
@@ -80,10 +87,11 @@ namespace Final_Project
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(703, 408);
+            this.tabPage1.Size = new System.Drawing.Size(774, 408);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Select";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // Undo_btn_F1
             // 
@@ -170,6 +178,23 @@ namespace Final_Project
             this.Gen_Hist_Tb.Text = "General Medical History";
             this.Gen_Hist_Tb.UseVisualStyleBackColor = true;
             // 
+            // Gen_Hist_txt_Bx
+            // 
+            this.Gen_Hist_txt_Bx.Location = new System.Drawing.Point(6, 69);
+            this.Gen_Hist_txt_Bx.Name = "Gen_Hist_txt_Bx";
+            this.Gen_Hist_txt_Bx.Size = new System.Drawing.Size(750, 275);
+            this.Gen_Hist_txt_Bx.TabIndex = 9;
+            this.Gen_Hist_txt_Bx.Text = "";
+            // 
+            // Patient_IdLbl
+            // 
+            this.Patient_IdLbl.AutoSize = true;
+            this.Patient_IdLbl.Location = new System.Drawing.Point(13, 27);
+            this.Patient_IdLbl.Name = "Patient_IdLbl";
+            this.Patient_IdLbl.Size = new System.Drawing.Size(25, 13);
+            this.Patient_IdLbl.TabIndex = 8;
+            this.Patient_IdLbl.Text = "Null";
+            // 
             // Save_Gen
             // 
             this.Save_Gen.Location = new System.Drawing.Point(16, 362);
@@ -218,34 +243,60 @@ namespace Final_Project
             // 
             this.genMedTableAdapter.ClearBeforeFill = true;
             // 
-            // Patient_IdLbl
+            // tabPage2
             // 
-            this.Patient_IdLbl.AutoSize = true;
-            this.Patient_IdLbl.Location = new System.Drawing.Point(13, 27);
-            this.Patient_IdLbl.Name = "Patient_IdLbl";
-            this.Patient_IdLbl.Size = new System.Drawing.Size(25, 13);
-            this.Patient_IdLbl.TabIndex = 8;
-            this.Patient_IdLbl.Text = "Null";
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(774, 408);
+            this.tabPage2.TabIndex = 2;
+            this.tabPage2.Text = "Admit New Patient";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // Gen_Hist_txt_Bx
+            // menuStrip1
             // 
-            this.Gen_Hist_txt_Bx.Location = new System.Drawing.Point(6, 69);
-            this.Gen_Hist_txt_Bx.Name = "Gen_Hist_txt_Bx";
-            this.Gen_Hist_txt_Bx.Size = new System.Drawing.Size(497, 275);
-            this.Gen_Hist_txt_Bx.TabIndex = 9;
-            this.Gen_Hist_txt_Bx.Text = "";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem,
+            this.quitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // quitToolStripMenuItem
+            // 
+            this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitToolStripMenuItem.Text = "Quit";
             // 
             // Main_Page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(800, 480);
+            this.Controls.Add(this.New_PatientTb);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main_Page";
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.New_PatientTb.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Select_box)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectionBindingSource)).EndInit();
@@ -254,7 +305,10 @@ namespace Final_Project
             this.Gen_Hist_Tb.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GenMedDataView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.genMedBindingSource)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -262,7 +316,7 @@ namespace Final_Project
         private MedsDataSet medsDataSet;
         private System.Windows.Forms.BindingSource selectionBindingSource;
         private MedsDataSetTableAdapters.SelectionTableAdapter selectionTableAdapter;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl New_PatientTb;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button Undo_btn_F1;
         private System.Windows.Forms.Button Select_Pt;
@@ -280,6 +334,11 @@ namespace Final_Project
         private System.Windows.Forms.DataGridViewTextBoxColumn generalMedDataGridViewTextBoxColumn;
         private System.Windows.Forms.RichTextBox Gen_Hist_txt_Bx;
         private System.Windows.Forms.Label Patient_IdLbl;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
     }
 }
 

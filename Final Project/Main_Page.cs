@@ -30,7 +30,7 @@ namespace Final_Project
             this.selectionTableAdapter.Fill(this.medsDataSet.Selection);
             this.GenMedDataView.ClearSelection();
             var tab = Gen_Hist_Tb;
-            //this.tabControl1.TabPages.Remove(Gen_Hist_Tb);
+            this.New_PatientTb.TabPages.Remove(Gen_Hist_Tb);
 
             Gen_Hist_Tb.Visible = false;
             //Patient_Selection.Items.AddRange(MedsDataSet.SelectionDataTable)
@@ -111,14 +111,14 @@ namespace Final_Project
 
                 }
                 //Sets Gen hist tab
-                if(tabControl1.TabPages.Contains(Gen_Hist_Tb) == true)
+                if(New_PatientTb.TabPages.Contains(Gen_Hist_Tb) == true)
                 {
-                    tabControl1.SelectedTab = Gen_Hist_Tb;
+                    New_PatientTb.SelectedTab = Gen_Hist_Tb;
                 }
                 else
                 {
-                    this.tabControl1.TabPages.Add(Gen_Hist_Tb);  //re-adds tab
-                    tabControl1.SelectedTab = Gen_Hist_Tb;
+                    this.New_PatientTb.TabPages.Add(Gen_Hist_Tb);  //re-adds tab
+                    New_PatientTb.SelectedTab = Gen_Hist_Tb;
                 }
 
                 //Updates tab
@@ -143,6 +143,11 @@ namespace Final_Project
             {
                 MessageBox.Show(Convert.ToString(error.Message));
             }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
