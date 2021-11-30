@@ -149,5 +149,52 @@ namespace Final_Project
         {
 
         }
+
+        private void CheckBtn_Click(object sender, EventArgs e)
+        {
+            //TODO: Check if name exists, produce warning. check if ID exist, if it does do not unlock button and produce warning.
+
+            string FirstNameENT = FrstNmBx.Text;
+            string LastNameENT = LstNmBx.Text;
+            string IdENT = PtIdBx.Text;
+            int RowIndex = Select_box.CurrentCell.RowIndex;
+            bool checkedPassed1 = false;
+            bool checkedPassed2 = false;
+            string Existing_Patient = "";
+
+            if (checkedPassed1 != true)
+            {
+                for (int i = 0; i < Select_box.Rows.Count; i++)
+                {
+                    
+                    for (int j = 0; i < Select_box.Columns.Count; j++)
+                    {
+                        //MessageBox.Show(Select_box.Rows[i].Cells[j].Value.ToString());
+                        Existing_Patient += Select_box.Rows[i].Cells[j].Value.ToString();
+                        MessageBox.Show(Existing_Patient + " Fullstring");
+                        if (Select_box.Rows[i].Cells[j].Value != null && FirstNameENT == Select_box.Rows[i].Cells[j].Value.ToString())
+                        {
+                            MessageBox.Show("The value already existed in DataGridView.");
+                        }
+                    }
+                //}
+                //for (int i = 0; i < Select_box.Rows.Count; i++)
+                //{
+                //    for (int j = 0; i < Select_box.Columns.Count; j++)
+                //    {
+                //        if (Select_box.Rows[i].Cells[j].Value != null && LastNameENT == Select_box.Rows[i].Cells[j].Value.ToString())
+                //        {
+                //            MessageBox.Show("The value already existed in DataGridView.");
+                //        }
+                //    }
+                }
+
+            }
+
+
+
+
+                UpdateBtn.Enabled = true; //leave as last operation
+        }
     }
 }

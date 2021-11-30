@@ -49,9 +49,17 @@ namespace Final_Project
             this.patientIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.generalMedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genMedBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.CheckBtn = new System.Windows.Forms.Button();
+            this.UpdateBtn = new System.Windows.Forms.Button();
+            this.PtIdBx = new System.Windows.Forms.TextBox();
+            this.FrstNmBx = new System.Windows.Forms.TextBox();
+            this.LstNmBx = new System.Windows.Forms.TextBox();
+            this.PtIdLbl = new System.Windows.Forms.Label();
+            this.FrstNmLbl = new System.Windows.Forms.Label();
+            this.LstNm_lbl = new System.Windows.Forms.Label();
             this.selectionTableAdapter = new Final_Project.MedsDataSetTableAdapters.SelectionTableAdapter();
             this.genMedTableAdapter = new Final_Project.MedsDataSetTableAdapters.GenMedTableAdapter();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +72,7 @@ namespace Final_Project
             this.Gen_Hist_Tb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GenMedDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.genMedBindingSource)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -235,16 +244,16 @@ namespace Final_Project
             this.genMedBindingSource.DataMember = "GenMed";
             this.genMedBindingSource.DataSource = this.medsDataSet;
             // 
-            // selectionTableAdapter
-            // 
-            this.selectionTableAdapter.ClearBeforeFill = true;
-            // 
-            // genMedTableAdapter
-            // 
-            this.genMedTableAdapter.ClearBeforeFill = true;
-            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.CheckBtn);
+            this.tabPage2.Controls.Add(this.UpdateBtn);
+            this.tabPage2.Controls.Add(this.PtIdBx);
+            this.tabPage2.Controls.Add(this.FrstNmBx);
+            this.tabPage2.Controls.Add(this.LstNmBx);
+            this.tabPage2.Controls.Add(this.PtIdLbl);
+            this.tabPage2.Controls.Add(this.FrstNmLbl);
+            this.tabPage2.Controls.Add(this.LstNm_lbl);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -252,6 +261,82 @@ namespace Final_Project
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "Admit New Patient";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // CheckBtn
+            // 
+            this.CheckBtn.Location = new System.Drawing.Point(36, 288);
+            this.CheckBtn.Name = "CheckBtn";
+            this.CheckBtn.Size = new System.Drawing.Size(75, 23);
+            this.CheckBtn.TabIndex = 7;
+            this.CheckBtn.Text = "Check";
+            this.CheckBtn.UseVisualStyleBackColor = true;
+            this.CheckBtn.Click += new System.EventHandler(this.CheckBtn_Click);
+            // 
+            // UpdateBtn
+            // 
+            this.UpdateBtn.Enabled = false;
+            this.UpdateBtn.Location = new System.Drawing.Point(153, 288);
+            this.UpdateBtn.Name = "UpdateBtn";
+            this.UpdateBtn.Size = new System.Drawing.Size(75, 23);
+            this.UpdateBtn.TabIndex = 6;
+            this.UpdateBtn.Text = "UPDATE";
+            this.UpdateBtn.UseVisualStyleBackColor = true;
+            // 
+            // PtIdBx
+            // 
+            this.PtIdBx.Location = new System.Drawing.Point(128, 180);
+            this.PtIdBx.Name = "PtIdBx";
+            this.PtIdBx.Size = new System.Drawing.Size(100, 20);
+            this.PtIdBx.TabIndex = 5;
+            // 
+            // FrstNmBx
+            // 
+            this.FrstNmBx.Location = new System.Drawing.Point(128, 123);
+            this.FrstNmBx.Name = "FrstNmBx";
+            this.FrstNmBx.Size = new System.Drawing.Size(100, 20);
+            this.FrstNmBx.TabIndex = 4;
+            // 
+            // LstNmBx
+            // 
+            this.LstNmBx.Location = new System.Drawing.Point(128, 61);
+            this.LstNmBx.Name = "LstNmBx";
+            this.LstNmBx.Size = new System.Drawing.Size(100, 20);
+            this.LstNmBx.TabIndex = 3;
+            // 
+            // PtIdLbl
+            // 
+            this.PtIdLbl.AutoSize = true;
+            this.PtIdLbl.Location = new System.Drawing.Point(33, 187);
+            this.PtIdLbl.Name = "PtIdLbl";
+            this.PtIdLbl.Size = new System.Drawing.Size(54, 13);
+            this.PtIdLbl.TabIndex = 2;
+            this.PtIdLbl.Text = "Patient ID";
+            // 
+            // FrstNmLbl
+            // 
+            this.FrstNmLbl.AutoSize = true;
+            this.FrstNmLbl.Location = new System.Drawing.Point(33, 123);
+            this.FrstNmLbl.Name = "FrstNmLbl";
+            this.FrstNmLbl.Size = new System.Drawing.Size(57, 13);
+            this.FrstNmLbl.TabIndex = 1;
+            this.FrstNmLbl.Text = "First Name";
+            // 
+            // LstNm_lbl
+            // 
+            this.LstNm_lbl.AutoSize = true;
+            this.LstNm_lbl.Location = new System.Drawing.Point(33, 61);
+            this.LstNm_lbl.Name = "LstNm_lbl";
+            this.LstNm_lbl.Size = new System.Drawing.Size(58, 13);
+            this.LstNm_lbl.TabIndex = 0;
+            this.LstNm_lbl.Text = "Last Name";
+            // 
+            // selectionTableAdapter
+            // 
+            this.selectionTableAdapter.ClearBeforeFill = true;
+            // 
+            // genMedTableAdapter
+            // 
+            this.genMedTableAdapter.ClearBeforeFill = true;
             // 
             // menuStrip1
             // 
@@ -275,13 +360,13 @@ namespace Final_Project
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.quitToolStripMenuItem.Text = "Quit";
             // 
             // Main_Page
@@ -305,6 +390,8 @@ namespace Final_Project
             this.Gen_Hist_Tb.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GenMedDataView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.genMedBindingSource)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -339,6 +426,14 @@ namespace Final_Project
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
+        private System.Windows.Forms.TextBox PtIdBx;
+        private System.Windows.Forms.TextBox FrstNmBx;
+        private System.Windows.Forms.TextBox LstNmBx;
+        private System.Windows.Forms.Label PtIdLbl;
+        private System.Windows.Forms.Label FrstNmLbl;
+        private System.Windows.Forms.Label LstNm_lbl;
+        private System.Windows.Forms.Button CheckBtn;
+        private System.Windows.Forms.Button UpdateBtn;
     }
 }
 
